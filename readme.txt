@@ -1,1 +1,1 @@
-springMVC+mybatis+freemarker+maven
+springMVC+mybatis+jsp+extremecomponent+mavenÕûºÏdemo
