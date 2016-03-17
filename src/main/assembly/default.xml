@@ -1,0 +1,54 @@
+﻿<assembly>
+	<id>dist-0.4.4</id>
+	<formats>
+		<format>zip</format>
+	</formats>
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>lib</outputDirectory>
+			<excludes>
+				<!-- 排除fms.war包 -->
+			    <exclude>com.yougou:fms:war</exclude>
+			    <!-- 排除oracle包 -->
+			    <exclude>oracle:oracleojdbc:jar</exclude>
+			    <!-- 排除单点登录 -->
+			    <exclude>com.yougou.cas.client:cas-client-client:jar</exclude>
+			</excludes>
+		</dependencySet>
+	</dependencySets>
+	<fileSets>
+		<fileSet>
+			<directory>./bin</directory>
+			<outputDirectory>bin</outputDirectory>
+			<includes>
+				<include>**</include>
+			</includes>
+		</fileSet>
+		<!-- 指定打包的目标文件夹 -->
+		<fileSet>
+			<directory>target/classes</directory>
+			<outputDirectory>conf</outputDirectory>
+			<includes>
+				<include>**</include>
+			</includes>
+			<fileMode>0644</fileMode>
+			<directoryMode>0644</directoryMode>
+		</fileSet>
+		
+		<fileSet>
+			<directory>src/main/config</directory>
+			<outputDirectory>conf</outputDirectory>
+			<includes>
+				<include>**/*.*</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>${basedir}/src/main/assembly</directory>
+			<outputDirectory>lib</outputDirectory>
+			<includes>
+				<include>servlet-api-2.5.jar</include>
+				<include>jboss-javaee.jar</include>
+			</includes>
+		</fileSet>
+	</fileSets>
+</assembly>
