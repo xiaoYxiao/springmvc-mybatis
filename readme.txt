@@ -1,0 +1,1 @@
+springMVC+mybatis+freemarker+maven
